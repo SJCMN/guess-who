@@ -14,11 +14,15 @@ function readyGame() {
 
     //declare the who
     let whoIndex = randomNumber(0, people.length - 1);
-    //console.log('whoIndex:', whoIndex);
+    console.log('whoIndex:', whoIndex);
+
+    // append dom with name to find
+    $('#nameDisplay').text(people[whoIndex].name)
 
     for (let i = 0; i < people.length; i++) {
         let person = people[i];
-        let imgHtml = $(`<img 
+        let imgHtml = $(`
+            <img class="userImage"
             src="https://github.com/${person.githubUsername}.png?size=250"    
             alt="Profile image of ${person.name}">`);
 
